@@ -1,0 +1,66 @@
+{% extends "core/base.html" %}
+{% block title %}{% endblock  %}
+
+{% block header %}Our Shop {% endblock header %}
+{% block content %}
+{% for shop in shop %}
+
+{% load static %}
+
+<div class="section trending">
+    <div class="container">
+      <div class="row trending-box">
+        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 ">
+          <div class="item">
+            <div class="thumb">
+              <a href="{% url 'product' %}"><img src="{{shop.image.url}}" alt=""></a>
+              <span class="price">{{shop.precio}}</span>
+            </div>
+            <div class="down-content">
+              <h4>{{shop.name}}</h4>
+              <a href="{% url 'product' %}"><i class="fa fa-shopping-bag"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 ">
+          <div class="item">
+            <div class="thumb">
+              <a href="{% url 'product' %}"><img src="{{shop.image.url}}" alt=""></a>
+              <span class="price">{{shop.precio}}</span>
+            </div>
+            <div class="down-content">
+              <h4>{{shop.name}}</h4>
+              <a href="{% url 'product' %}"><i class="fa fa-shopping-bag"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 ">
+          <div class="item">
+            <div class="thumb">
+              <a href="{% url 'product' %}"><img src="{{shop.image.url}}" alt=""></a>
+              <span class="price">{{shop.precio}}</span>
+            </div>
+            <div class="down-content">
+              <h4>{{shop.name}}</h4>
+              <a href="{% url 'product' %}"><i class="fa fa-shopping-bag"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 ">
+          <div class="item">
+            <div class="thumb">
+              <a href="{% url 'product' %}"><img src="{{shop.image.url}}" alt=""></a>
+              <span class="price">{{shop.precio}}</span>
+            </div>
+            <div class="down-content">
+              <h4>{{shop.name}}</h4>
+              <a href="{% url 'product' %}"><i class="fa fa-shopping-bag"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div> 
+    </div> 
+  </div> 
+  {% endfor %}
+  {% endblock  %}

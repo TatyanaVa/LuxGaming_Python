@@ -1,0 +1,118 @@
+{% extends "core/base.html" %}
+{% block title %}{% endblock  %}
+{% block header %}
+{% load static %}
+
+<div class="row">
+    <div class="col-lg-6 align-self-center">
+      <div class="caption header-text">
+        <h6>BIENVENIDO A LUX GAMMING</h6>
+        <h2>EL MEJOR LUGAR SIEMPRE!</h2>
+        <p>¡Bienvenido a nuestro universo de juegos! Te damos la bienvenida a la mejor experiencia gamer. Descubre emocionantes aventuras, gráficos asombrosos y la última tecnología en videojuegos. Explora, elige y sumérgete en el fascinante mundo del entretenimiento digital. ¡Que empiece la diversión!</p>
+        <div class="search-input">
+        <form id="search" action="#">
+      <!--input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
+      <button role="button">BUSCAR</button-->
+        </form>
+      </div>
+    </div>
+</div>
+<div class="col-lg-4 offset-lg-2">
+  <div class="right-image">
+      <img src="{% static 'core/assets/images/banner-image.jpg' %}" alt="">
+</div>
+</div>
+</div>
+</div>
+
+{% endblock header %}
+{% block content %}
+{% load static %}
+
+  <div class="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <a href="#">
+            <div class="item">
+              <div class="image">
+                <img src="{% static 'core/assets/images/featured-01.png' %}" alt="" style="max-width: 44px;">
+              </div>
+              <h4>Free Storage</h4>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <a href="#">
+            <div class="item">
+              <div class="image">
+                <img src="{% static 'core/assets/images/featured-02.png' %}" alt="" style="max-width: 44px;">
+              </div>
+              <h4>User More</h4>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <a href="#">
+            <div class="item">
+              <div class="image">
+                <img src="{% static 'core/assets/images/featured-03.png' %}" alt="" style="max-width: 44px;">
+              </div>
+              <h4>Reply Ready</h4>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <a href="#">
+            <div class="item">
+              <div class="image">
+                <img src="{% static 'core/assets/images/featured-04.png' %}" alt="" style="max-width: 44px;">
+              </div>
+              <h4>Easy Layout</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>  
+  <div class="section cta">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="shop">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="section-heading">
+                  <h6>Our Shop</h6>
+                  <h2>Go Pre-Order Buy & Get Best <em>Prices</em> For You!</h2>
+                </div>
+                <p>Lorem ipsum dolor consectetur adipiscing, sed do eiusmod tempor incididunt.</p>
+                <div class="main-button">
+                  <a href="{% static 'core/shop.html' %}">Shop Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 offset-lg-2 align-self-end">
+          <div class="subscribe">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="section-heading">
+                  <h6>NEWSLETTER</h6>
+                  <h2>Get Up To $100 Off Just Buy <em>Subscribe</em> Newsletter!</h2>
+                </div>
+                <div class="search-input">
+                  <form id="subscribe" action="#">
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your email...">
+                    <button type="submit">Subscribe Now</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock  %}
