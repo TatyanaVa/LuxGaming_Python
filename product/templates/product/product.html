@@ -5,29 +5,29 @@
 
 {% block content %}
 {% load static %}
-
-
+{% for product in product %}
 
   <div class="single-product section">
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
           <div class="left-image">
-            <img src="{% static 'core/assets/images/single-game.jpg' %}" alt="">
+            <img src="{{product.image.url}}" alt="">
           </div>
         </div>
         <div class="col-lg-6 align-self-center">
-          <h4>Call of Duty®: Modern Warfare® II</h4>
-          <span class="price"> $22</span>
-          <p>Explora mundos vastos, enfrenta peligros y descubre tus habilidades en este juego de acción. Sumérgete en gráficos impresionantes y vive una experiencia inmersiva llena de emoción y desafíos. ¿Estás listo para embarcarte en esta épica aventura?</p>
+          <h4>{{product.title}}</h4>
+          <span class="price">{{product.price}}</span>
+          <p>{{product.description}}</p>
           <form id="qty" action="#">
             <input type="qty" class="form-control" id="1" aria-describedby="quantity" placeholder="1">
             <button type="submit"><i class="fa fa-shopping-bag"></i> ADD TO CART</button>
           </form>
           <ul>
-            <li><span>ID:</span> COD MMII</li>
-            <li><span>Genero:</span> <a href="#">Acción, Adventura, Saga</a></li>
-            <li><span>Plataformas:</span> <a href="#">PS4,PC,EXBOX</a></li>
+            <li><span>Author</span> {{product.author}}</li>
+            {% for section in  product.section.all %}
+            <li><span>Secction:</span> <a href="{% url 'section' section.id %}">{{section.name}} {% if not forloop.last %},{% endif %}</a></li>
+                {% endfor %}
           </ul>
         </div>
         <div class="col-lg-12">
@@ -55,13 +55,12 @@
               </div>              
               <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-                  <p>"Un apasionante juego de acción y aventuras que sumerge a los jugadores en un fascinante mundo lleno de desafíos y misterios. Con gráficos impresionantes y una jugabilidad envolvente, este videojuego ofrece una experiencia emocionante donde los jugadores pueden explorar, descubrir habilidades únicas y enfrentarse a enemigos formidables. ¿Estás listo para sumergirte en una épica odisea llena de emoción y sorpresas</p>
-                <br>
-                <p>Experimenta la adrenalina de un juego de rol épico que te transporta a un universo de ciencia ficción. Con una narrativa cautivadora, este videojuego ofrece un emocionante viaje a través de planetas desconocidos, lleno de personajes intrigantes y desafíos estratégicos.</p>
+                  <p>{{product.content}}</p>
                 </div>
                 <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
-                  <p>Sumérgete en gráficos de alta calidad, descubre secretos ocultos y forja tu camino hacia la victoria en este emocionante juego de aventuras cósmicas.</p>
+                  <p>{{product.review}}</p>
                 </div>
+                
               </div>
             </div>
           </div>
@@ -70,4 +69,6 @@
     </div>
   </div>
 
+{% endfor %}
 {% endblock %}
+

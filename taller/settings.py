@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'contacts',
     'policies',
     'shop',
+    'social',
+    'product',
         
 ]
 
@@ -68,6 +70,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social.processors.ctx_dict',
             ],
         },
     },
@@ -130,3 +133,9 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#Config email
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = '9b2b000dee3b63'
+EMAIL_HOST_PASSWORD = 'b7aecbb9e12664'
+EMAIL_PORT = '2525'
